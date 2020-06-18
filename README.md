@@ -18,6 +18,7 @@ npm start
 | :---:         |     :---:      |          :---: |
 | /create  | POST    | Create a link    |
 | /:id    | GET  | Go to the link associated with this id    |
+| /:id/data    | GET  | Get data associated with this id   |
 | /:id | DELETE| Delete this link|
 
 ## Contributing
