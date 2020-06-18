@@ -40,10 +40,11 @@ app.post('/b/create', async (req, res) => {
 	});
 	let temp_link = await temp.save();
 	return res.json({
-		"data": {
-			"link": domain + "/" + temp_link.short
+		'success': true,
+		'data': {
+			'link': domain + '/' + temp_link.short
 		}
-	})
+	});
 });
 app.get('/:id', async (req, res) => {
 	let temp = await link.findOne({
