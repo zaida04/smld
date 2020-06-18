@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set('views', __dirname + '/../views');
 app.set('view engine', 'pug');
 //eslint-disable-next-line no-useless-escape
-let url_regex = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
+let url_regex = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
 
 app.get('/', async (_, res) => res.sendFile('index.html'));
 app.post('/b/create', async (req, res) => {
