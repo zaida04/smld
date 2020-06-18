@@ -11,7 +11,7 @@ let link = require('../models/link');
 app.use(static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.set('views', __dirname + '\\..\\views');
+app.set('views', __dirname + '/../views');
 app.set('view engine', 'pug');
 //eslint-disable-next-line no-useless-escape
 let url_regex = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
