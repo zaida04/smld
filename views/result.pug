@@ -1,4 +1,5 @@
 p
-	| Short: #{domain}/#{result.short}
+	| Short: 
+	a(href="http://" + domain + "/" + result.short) #{domain}/#{result.short}
 p
 	| Target: #{result.target}
