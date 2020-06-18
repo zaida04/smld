@@ -7,7 +7,7 @@ const {domain,port,mongo_uri} = require('./config');
 app.locals.domain = domain;
 mongoose.connect(mongo_uri, {useUnifiedTopology: true,useNewUrlParser: true}, () => console.log('connected to mongo db')); //connect to the DB
 
-let link = require('./models/link');
+let link = require('../models/link');
 app.use(static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
