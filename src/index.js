@@ -30,6 +30,21 @@ app.post('/b/create', async (req, res) => {
 		'result': temp_link
 	});
 });
+app.post('/b/create', async (req, res) => {
+	if(!req.body.target || !req.body.target.match(url_regex)) return res.send('Not a well formed url');
+	if (!req.body.target.startsWith('http') || !req.body.target.startsWith('https')) req.body.target = 'http://' + req.body.target;
+	let short = Math.random().toString(36).substring(9);
+	let temp = new link({
+		'target': req.body.target,
+		'short': short
+	});
+	let temp_link = await temp.save();
+	return res.json({
+		"data": {
+			"link": domain + "/" + temp_link.short
+		}
+	})
+});
 app.get('/:id', async (req, res) => {
 	let temp = await link.findOne({
 		'short': req.params.id
