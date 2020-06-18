@@ -30,7 +30,7 @@ app.post('/b/create', async (req, res) => {
 		'result': temp_link
 	});
 });
-app.post('/b/create', async (req, res) => {
+app.post('/create', async (req, res) => {
 	if(!req.body.target || !req.body.target.match(url_regex)) return res.send('Not a well formed url');
 	if (!req.body.target.startsWith('http') || !req.body.target.startsWith('https')) req.body.target = 'http://' + req.body.target;
 	let short = Math.random().toString(36).substring(9);
