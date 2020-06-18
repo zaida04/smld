@@ -1,0 +1,28 @@
+{
+  "name": "smld",
+  "version": "1.0.0",
+  "description": "A link shortener",
+  "main": "index.js",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "eslint": "^7.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.19",
+    "pug": "^3.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zaida04/smld.git"
+  },
+  "author": "Zaid",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zaida04/smld/issues"
+  },
+  "homepage": "https://github.com/zaida04/smld#readme"
+}

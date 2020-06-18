@@ -7,7 +7,7 @@ Link shortener written in node.js, pretty short.
 Use git to clone this repo
 
 ```bash
-git clone https://github.com/zaida04/smld
+git clone https://github.com/zaida04/smld.git
 cd smld
 npm install
 npm start
