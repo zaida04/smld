@@ -1,5 +1,5 @@
 const app = require('express')();
-const {static} = require('express');
+const {static, json} = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
@@ -9,7 +9,7 @@ mongoose.connect(mongo_uri, {useUnifiedTopology: true,useNewUrlParser: true}, ()
 
 let link = require('../models/link');
 app.use(static('public'));
-app.use(bodyParser.json());
+app.use(json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('views', __dirname + '/../views');
 app.set('view engine', 'pug');
