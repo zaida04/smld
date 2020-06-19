@@ -16,7 +16,7 @@ npm start
 ## API Endpoints
 | Endpoint | Method | Description |
 | :---:         |     :---:      |          :---: |
-| /create  | POST    | Create a link    |
+| /a/create  | POST    | Create a link (API only)  |
 | /:id    | GET  | Go to the link associated with this id    |
 | /:id/data    | GET  | Get data associated with this id   |
 | /:id | DELETE| Delete this link|
