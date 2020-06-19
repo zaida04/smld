@@ -56,6 +56,7 @@ app.post('/a/create', async (req, res) => {
 		});
 	}
 	let short = Math.random().toString(36).substring(9);
+	if(await link.findOne({'short': short})) short = Math.random().toString(36).substring(9);
 	let temp = new link({
 		'target': req.body.target,
 		'short': short
