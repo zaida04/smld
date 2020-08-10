@@ -14,7 +14,7 @@ mongoose.connect(mongo_uri, {
 	useNewUrlParser: true
 }, () => console.log('connected to mongo db')); //connect to the DB
 
-let link = require('../models/link');
+import link from "../models/link";
 app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -42,7 +42,7 @@ app.post('/b/create', async (req: express.Request, res: express.Response) => {
 app.post('/a/create', async (req, res) => {
 	if (!req.body.target || !req.body.target.match(url_regex)) return res.send('Not a well formed url');
 	if (!req.body.target.startsWith('http') || !req.body.target.startsWith('https')) req.body.target = 'http://' + req.body.target;
-	let check: typeof link | null = await link.findOne({
+	let check:any = await link.findOne({
 		'target': req.body.target
 	});
 	if (check) {
@@ -55,7 +55,7 @@ app.post('/a/create', async (req, res) => {
 	}
 	let short: string = Math.random().toString(36).substring(9);
 	if (await link.findOne({ 'short': short })) short = Math.random().toString(36).substring(9);
-	let temp: typeof link = new link({
+	let temp:any = new link({
 		'target': req.body.target,
 		'short': short
 	});
@@ -68,14 +68,14 @@ app.post('/a/create', async (req, res) => {
 	});
 });
 app.get('/:id', async (req, res) => {
-	let temp: typeof link = await link.findOne({
+	let temp:any = await link.findOne({
 		'short': req.params.id
 	});
 	if (!temp) return res.send('Sorry, but that short link doesn\'t exist');
 	res.redirect(temp.target);
 });
 app.get('/:id/data', async (req, res) => {
-	let temp: typeof link = await link.findOne({
+	let temp = await link.findOne({
 		'short': req.params.id
 	});
 	if (!temp) return res.send('Sorry, but that short link doesn\'t exist');
@@ -83,7 +83,7 @@ app.get('/:id/data', async (req, res) => {
 });
 
 app.delete('/:id', async (req, res) => {
-	let temp: typeof link = await link.findOne({
+	let temp:any = await link.findOne({
 		'short': req.params.id
 	});
 	if (!temp) return res.send('Sorry, but that short link doesn\'t exist');
