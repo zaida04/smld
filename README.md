@@ -1,7 +1,7 @@
 # SMLD
+Link shortener written in node.js, pretty short (puns).
 
-Link shortener written in node.js, pretty short.
-
+(Created ~6/10/2020)
 ## Installation
 
 Use git to clone this repo
